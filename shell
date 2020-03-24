@@ -1,0 +1,22 @@
+#删除本地分支#
+git for-each-ref --format='%(refname:short)' refs/heads/local/regex\* | xargs git branch -D
+
+#for loop exmaple#
+for f in ./app/**/*.java
+do
+  echo $f
+done
+
+#find -exec example#
+find ./ -type f -exec echo {} \;
+find -L /usr/ports/packages -type l -exec rm -- {} +
+
+#xargs example#
+git for-each-ref --format='%(refname:short)' refs/heads/local/Yqg\* | xargs git branch -D
+
+#tcpdump example#
+tcpdump -vvvs 1024 -l -A host  fir3net.com
+tcpdump -vvvs 1500 -l -A host  fir3net.com
+
+#Perl grep筛选JSON字符串字段#
+cat interest.txt | ggrep -Po '"loanInterestRate":"?\K[\w\.]+(?=("|,|}))'
